@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="luaFramework.com" version="1.0.0">
+    <ui-application appid="luaFramework.com" exec="hellolua" type="capp" multiple="false" taskmanage="true" nodisplay="false">
+        <icon>luaFramework.png</icon>
+        <label>luaFramework</label>
+	</ui-application>
+</manifest>
