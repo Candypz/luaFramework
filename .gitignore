@@ -2,3 +2,4 @@ simulator
 *.db
 *.opendb
 Debug.win32
+*.suo
