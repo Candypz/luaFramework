@@ -1,0 +1,4 @@
+simulator
+*.db
+*.opendb
+Debug.win32
