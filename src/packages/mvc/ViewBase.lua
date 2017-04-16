@@ -1,5 +1,6 @@
 
 local ViewBase = class("ViewBase", cc.Node)
+local eventModule = require("src.app.module.eventModule")
 
 function ViewBase:ctor(app, name)
     self:enableNodeEvents()
@@ -16,6 +17,8 @@ function ViewBase:ctor(app, name)
     if res and binding then
         self:createResourceBinding(binding)
     end
+
+    eventModule:getInstance():registered(self)
 
     if self.onCreate then self:onCreate() end
 end
@@ -63,6 +66,22 @@ function ViewBase:showWithScene(transition, time, more)
     scene:addChild(self)
     display.runScene(scene, transition, time, more)
     return self
+end
+
+function ViewBase:listenerMsg()
+    return nil
+end
+
+function ViewBase:receiveMsg(eventNaem, data)
+    
+end
+
+function ViewBase:Distributed(eventNaem, data)
+    eventModule:getInstance():distributed(eventNaem, data)
+end
+
+function ViewBase:onExit()
+    eventModule:getInstance():remove(self)
 end
 
 return ViewBase

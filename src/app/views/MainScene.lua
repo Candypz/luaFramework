@@ -12,6 +12,21 @@ function MainScene:onCreate()
         :move(display.cx, display.cy + 200)
         :addTo(self)
 
+    self:Distributed("eddddd", "ddddddd")
+end
+
+function MainScene:listenerMsg()
+    return {
+        "eddddd",
+        "ddddd",
+        "eddddd",
+    }
+end
+
+function MainScene:receiveMsg(eventNaem, data)
+    if eventNaem == "eddddd" then
+        print(data)
+    end
 end
 
 return MainScene
