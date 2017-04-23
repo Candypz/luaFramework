@@ -1,3 +1,6 @@
 {
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "packageUrl" : "http://192.168.114.129/hotUpdataTest/",
+    "remoteManifestUrl" : "http://192.168.114.129/hotUpdataTest/res/version/project.manifest",
+    "remoteVersionUrl" : "http://192.168.114.129/hotUpdataTest/res/version/version.manifest"
 }

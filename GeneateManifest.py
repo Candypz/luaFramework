@@ -71,6 +71,9 @@ def getVersionInfo():
     json_data = json.load(configFile)
     configFile.close()
     json_data["version"] = json_data["version"]
+    json_data["packageUrl"] = json_data["packageUrl"]
+    json_data["remoteManifestUrl"] = json_data["remoteManifestUrl"]
+    json_data["remoteVersionUrl"] = json_data["remoteVersionUrl"]
     return json_data
 
 

@@ -3,3 +3,6 @@ simulator
 *.opendb
 Debug.win32
 *.suo
+update
+project.manifest
+version.manifest

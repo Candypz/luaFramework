@@ -60,7 +60,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     //register custom function
     //LuaStack* stack = engine->getLuaStack();
     //register_custom_function(stack->getLuaState());
-    
+    FileUtils::getInstance()->addSearchPath(FileUtils::getInstance()->getWritablePath().append("update/res"));
+    FileUtils::getInstance()->addSearchPath(FileUtils::getInstance()->getWritablePath().append("update/src"));
 #if CC_64BITS
     FileUtils::getInstance()->addSearchPath("src/64bit");
 #endif
