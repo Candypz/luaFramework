@@ -2,7 +2,7 @@
 
 CSocketBase::CSocketBase() {
     m_initSuccess = false;
-#if (MY_PLATFORM_WIN32 == MY_PLATFORM_WIN32)  
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)  
     WORD wVersionRequested;
     wVersionRequested = MAKEWORD(2, 0);
     WSADATA wsaData;
@@ -16,7 +16,7 @@ CSocketBase::CSocketBase() {
 }
 
 CSocketBase::~CSocketBase() {
-#if (MY_PLATFORM_WIN32 == MY_PLATFORM_WIN32)  
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)  
     if (m_initSuccess) {
         WSACleanup();
     }
@@ -24,7 +24,7 @@ CSocketBase::~CSocketBase() {
 }
 
 void CSocketBase::closeConnect(CSocket socket) {
-#if (MY_PLATFORM_WIN32 == MY_PLATFORM_WIN32)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	closesocket(socket);
 #else
 	close(socket);
@@ -32,7 +32,7 @@ void CSocketBase::closeConnect(CSocket socket) {
 }
 
 bool CSocketBase::error(CSocket socket) {
-#if (MY_PLATFORM_WIN32 == MY_PLATFORM_WIN32)  
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)  
     return socket == SOCKET_ERROR;
 #else
     return socket < 0;

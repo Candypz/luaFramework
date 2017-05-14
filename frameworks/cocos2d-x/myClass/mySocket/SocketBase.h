@@ -11,11 +11,9 @@ Description:
 
 #include <thread>
 #include <mutex>
+#include "cocos2d.h"
 
-#define  MY_PLATFORM_WIN32 MY_PLATFORM_WIN32
-#define  MY_PLATFORM MY_PLATFORM
-
-#if (MY_PLATFORM == MY_PLATFORM_WIN32)  
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)  
 #include <WinSock2.h>  
 #pragma comment(lib, "WS2_32.lib")  
 #define CSocket SOCKET 
