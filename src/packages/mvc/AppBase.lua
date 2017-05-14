@@ -5,7 +5,8 @@ function AppBase:ctor(configs)
     self.configs_ = {
         viewsRoot  = "app.views",
         modelsRoot = "app.models",
-        defaultSceneName = "HotUpdate",
+        --defaultSceneName = "HotUpdate",
+        defaultSceneName = "MainScene",
     }
 
     for k, v in pairs(configs or {}) do
